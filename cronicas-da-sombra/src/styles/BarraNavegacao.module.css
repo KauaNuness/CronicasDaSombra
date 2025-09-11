@@ -1,0 +1,71 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b0b0d;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid #1f1f25;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.knightIcon {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.knightIcon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.8));
+}
+
+.healthBar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mask {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle at 40% 40%, #fff 60%, #aaa 100%);
+  border-radius: 50%;
+  border: 2px solid #000;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.mask:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(155, 89, 182, 0.8);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #d1d1d1;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-family: "Cinzel", serif;
+}
+
+.link:hover {
+  color: #9b59b6;
+  transform: scale(1.1);
+}
+
+.mask:active {
+  transform: scale(1.3);
+  box-shadow: 0 0 15px #9b59b6;
+}
