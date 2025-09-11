@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "../styles/Carousel.module.css";
 
 import img1 from "../assets/images/imagem1.jpg";
-import img2 from "../assets/images/imagem2.avif";
+import img2 from "../assets/images/imagem2.jpg";
 import img3 from "../assets/images/imagem3.jpg";
 import img4 from "../assets/images/imagem4.jpg";
 import img5 from "../assets/images/imagem5.jpg";
