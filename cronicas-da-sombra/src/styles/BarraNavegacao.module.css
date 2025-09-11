@@ -1,3 +1,19 @@
+/* Impede scroll horizontal e limita largura da tela */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Cinzel", serif;
+  overflow-x: hidden; /* bloqueia scroll horizontal */
+}
+
+/* Mantém espaço para navbar fixa */
+body {
+  padding-top: 70px;
+  box-sizing: border-box; /* garante que padding não aumente a largura */
+}
+
+/* Navbar ocupando largura máxima sem ultrapassar a tela */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,30 +22,29 @@
   padding: 0.8rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #1f1f25;
+  width: 100%;
+  max-width: 100vw; /* nunca ultrapassa a largura da tela */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-.hud {
+/* HUD e links ajustados */
+.hud, .links {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  max-width: 100vw; /* impede crescimento lateral */
+  box-sizing: border-box;
 }
 
-.knightIcon {
-  height: 50px;
-  width: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
-}
+/* Outros elementos continuam iguais */
+.knightIcon { height: 50px; width: auto; transition: transform 0.3s ease, filter 0.3s ease; cursor: pointer; }
+.knightIcon:hover { transform: scale(1.2); filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.8)); }
 
-.knightIcon:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.8));
-}
-
-.healthBar {
-  display: flex;
-  gap: 0.5rem;
-}
+.healthBar { display: flex; gap: 0.5rem; }
 
 .mask {
   display: inline-block;
@@ -39,33 +54,11 @@
   border-radius: 50%;
   border: 2px solid #000;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
+.mask:hover { transform: scale(1.2); box-shadow: 0 0 12px rgba(155, 89, 182, 0.8); }
+.mask:active { transform: scale(1.3); box-shadow: 0 0 15px #9b59b6; }
 
-.mask:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 12px rgba(155, 89, 182, 0.8);
-}
-
-.links {
-  display: flex;
-  gap: 2rem;
-}
-
-.link {
-  text-decoration: none;
-  color: #d1d1d1;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
-  font-family: "Cinzel", serif;
-}
-
-.link:hover {
-  color: #9b59b6;
-  transform: scale(1.1);
-}
-
-.mask:active {
-  transform: scale(1.3);
-  box-shadow: 0 0 15px #9b59b6;
-}
+.link { text-decoration: none; color: #d1d1d1; font-weight: 500; transition: color 0.3s ease, transform 0.2s ease; }
+.link:hover { color: #9b59b6; transform: scale(1.1); }

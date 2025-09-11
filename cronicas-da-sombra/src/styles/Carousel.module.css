@@ -1,0 +1,108 @@
+.carouselContainer {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.slide {
+  position: absolute;
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.active {
+  transform: scale(1) translateX(0) rotateY(0deg);
+  opacity: 1;
+  z-index: 3;
+}
+
+.active:hover {
+  transform: scale(1.08) translateX(0) rotateY(0deg);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.prevSlide {
+  transform: scale(0.8) translateX(-100%) rotateY(25deg);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.nextSlide {
+  transform: scale(0.8) translateX(100%) rotateY(-25deg);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.hidden {
+  transform: scale(0.6) translateX(0) rotateY(0deg);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* ================= Modal ================= */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: grab;
+}
+
+.modalContent {
+  position: relative;
+  perspective: 1200px;
+}
+
+.modalImage {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  transition: transform 0.1s linear;
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  transition: background 0.3s;
+}
+
+.closeButton:hover {
+  background: #333;
+}
